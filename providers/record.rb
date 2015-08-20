@@ -8,7 +8,7 @@ def record
 end
 
 def handler
-  Route53ARecord::Handler.new(r.aws_region, r.aws_access_key_id, r.aws_secret_key, r.overwrite)
+  Route53ARecord::Handler.new(r.aws_region, r.aws_access_key_id, r.aws_secret_access_key, r.overwrite)
 end
 
 action :create do
