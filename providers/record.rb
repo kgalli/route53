@@ -17,7 +17,7 @@ action :create do
   begin
     handler.create(record)
     Chef::Log.debug("Created record: #{record.inspect}")
-  rescue Exception => e
+  rescue Aws::Route53::Errors::InvalidChangeBatch => e
     Chef::Log.error e.to_s
   end
 end
@@ -28,7 +28,7 @@ action :delete do
   begin
     handler.delete(record)
     Chef::Log.debug("Destroyed record: #{r.name}")
-  rescue Exception => e
+  rescue Aws::Route53::Errors::InvalidChangeBatch => e
     Chef::Log.error e.to_s
   end
 end
