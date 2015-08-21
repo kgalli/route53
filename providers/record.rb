@@ -8,7 +8,7 @@ def record
 end
 
 def handler
-  Route53ARecord::Handler.new(r.aws_region, r.aws_access_key_id, r.aws_secret_access_key, r.overwrite)
+  Route53ARecord::Handler.new(r.aws_access_key_id, r.aws_secret_access_key, r.overwrite)
 end
 
 action :create do
@@ -17,7 +17,7 @@ action :create do
   begin
     handler.create(record)
     Chef::Log.debug("Created record: #{record.inspect}")
-  rescue Aws::Route53::Errors::InvalidChangeBatch => e
+  rescue AWS::Route53::Errors::InvalidChangeBatch => e
     Chef::Log.error e.to_s
   end
 end
@@ -28,7 +28,7 @@ action :delete do
   begin
     handler.delete(record)
     Chef::Log.debug("Destroyed record: #{r.name}")
-  rescue Aws::Route53::Errors::InvalidChangeBatch => e
+  rescue AWS::Route53::Errors::InvalidChangeBatch => e
     Chef::Log.error e.to_s
   end
 end
