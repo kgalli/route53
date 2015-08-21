@@ -64,3 +64,14 @@ complete the recipe above.
 }
 ```
 
+# Areas to improve
+
+* This LWRP is missing tests and therefore ist not ready
+  for production yet.
+* The management of aws credentials could be better. Maybe by the
+  support of environment variables or a config file. The changes should
+  probably be implemented by the `route53_a_record` gem.
+* The LWRP supports only A records. It should be not so hard to
+  implement the missing features in the `route53_a_record` gem and
+  update this LWRP accordingly.
+
