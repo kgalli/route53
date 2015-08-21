@@ -24,8 +24,8 @@ end
 ```
 
 Replace `action :create` with `action :delete` to delete the A entry.
-__BE AWARE__ that name, value __and__ ttl must be the same as the existing
-entry. Otherwise it will not be deleted.
+__BE AWARE__ that `name`, `value` __and__ `ttl` must be the same as the existing
+record. Otherwise it will not be deleted.
 
 ## OpsWorks Example
 
@@ -59,7 +59,7 @@ complete the recipe above.
 {
   "aws_zone_id"   : "Z7DWKL9EXAMPLE",
   "aws_access_key": "AKSOEJWJS6KYWEXAMPLE",
-  "aws_secret_key": "AKRT3wgZz36EfZsaU1T7M3fsTT143nClvEXAMPLE"
+  "aws_secret_key": "AKRT3wgZz36EfZsaU1T7M3fsTT143nClvEXAMPLE",
   "aws_domain"    : "example.com"
 }
 ```
