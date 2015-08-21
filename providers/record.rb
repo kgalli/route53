@@ -14,6 +14,10 @@ end
 action :create do
   require 'route53_a_record'
 
+  Chef::Log.info "### Route53ARecord VERSION: "
+  Chef::Log.info Route53ARecord::VERSION
+  Chef::Log.info "###"
+
   begin
     handler.create(record)
     Chef::Log.debug("Created record: #{record.inspect}")
@@ -24,6 +28,10 @@ end
 
 action :delete do
   require 'route53_a_record'
+
+  Chef::Log.info "### Route53ARecord VERSION: "
+  Chef::Log.info Route53ARecord::VERSION
+  Chef::Log.info "###"
 
   begin
     handler.delete(record)
